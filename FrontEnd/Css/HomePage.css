@@ -1,0 +1,70 @@
+:root {
+    /* Global Variables*/
+
+    /* Body Variables*/
+    --bg_color: #7a7a7a;
+    --text_font: 'Roboto', sans-serif;
+
+    /* Section 1: Tabs*/
+    --tab_selected_color: #e2e2e2;
+    --tab_unselected_color: #fff;
+    
+    /* Section 2: About Us*/
+    --about_us_bg_image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx7Ls6Kht_q0oBzZvnvmmuJHms4404tRUlMQ&s");
+    --about_us_bg_color: #7a7a7a;
+}
+
+body {
+    background: var(--bg_color);
+    font-family: var(--text_font);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Section 1*/
+.myTabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 25px;
+}
+.myTabs input[type="radio"] {
+    display: none;
+}
+.myTabs label {
+    padding: 25px;
+    background: var(--tab_selected_color);
+    font-weight: bold;
+}
+.myTabs .tab {
+    width: 100%;
+    padding: 20px;
+    background: var(--tab_unselected_color);
+    order: 1;
+    display: none;
+}
+.myTabs .tab h2 {
+    font-size: 3em;
+}
+.myTabs input[type='radio']:checked + label + .tab {
+    display: block;
+}
+.myTabs input[type='radio']:checked + label {
+    background: var(--tab_unselected_color);
+}
+
+/* Section 2*/
+#aboutUs {
+    background-image: var(--about_us_bg_image);
+    background-size: cover;
+    background-position: center;
+}
+#aboutUsOverlay {
+    background-color: rgba(27, 37, 98, 0.4);
+    width: 50vw;
+    height: 50vh;
+    margin: 20vw;
+    padding: 5%;
+}
