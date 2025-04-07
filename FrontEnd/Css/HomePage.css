@@ -1,3 +1,16 @@
+/*
+
+Guide to Coding website:
+- Naming convention: camel case for all ids and classes. EX: (helloWorld, currentLoad)
+- Naming convention: snake case for all variables in css. EX: (snake_case, water_shoot)
+- Naming convention: Pascal case for all variables in css. EX: (HelloWorld, CapitalLetter, Abcd)
+- Dont spam divs! Learn when to use it properly
+- Use Flex instead of grid
+- (to be continued)
+
+*/
+
+
 /* PLACE ALL YOUR VARIABLES HERE!!*/
 :root {
     /* Global Variables*/
@@ -86,7 +99,7 @@ nav {
     font-weight: bold;
 }
 .myTabs .tab {
-    width: 100%;
+    width: 1760px;
     padding: 20px;
     background: var(--tab_selected_color);
     order: 1;
@@ -100,6 +113,19 @@ nav {
 }
 .myTabs input[type='radio']:checked + label {
     background: var(--tab_selected_color);
+}
+.tab {
+    display: flex;
+}
+.insideTab:nth-child(1) {
+    background-color: #ff3838;
+    width: 100px;
+    height: 100px;
+}
+.insideTab:nth-child(2) {
+    background-color: #ffabab;
+    width: 100px;
+    height: 100px;
 }
 
 /* Section 2*/
