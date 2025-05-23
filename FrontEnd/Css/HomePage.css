@@ -22,7 +22,7 @@ Guide to Coding website:
 
     /* Header*/
     --header_bg_color: #ffffff;
-    --nav_hover_color: #ff3838;
+    --nav_hover_color: #00ff1e;
 
     /* Section 1: Tabs*/
     --tab_selected_color: #7583D7;
@@ -68,30 +68,25 @@ header {
     cursor: pointer;
 }
 nav {
-    order: 0;
-    
+    order: 0; 
 }
 .nav_links {
   list-style: none;
   padding: 10px 25px;
-  border: 3px solid #243695; /* dark blue */
+  border: 3px solid #29378C; /* dark blue */
   border-radius: 15px; /* pill shape */
-  color: #243695;
+  color: #29378C;
   font-weight: bold;
   font-size: 1.1rem;
   font-family: sans-serif;
   text-align: center;
 }
-.nav_links-hover{   
-  background-color: #243695;
-  color: white;
-}
-
 .nav_links li {
     padding: 0px 20px; 
 }
 .nav_links li a {
     transition: all 0.3s ease 0s;
+    text-decoration: none;
 }
 .nav_links li a:hover {
     color: var(--nav_hover_color);
