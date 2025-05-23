@@ -17,18 +17,18 @@ Guide to Coding website:
     --text_color_dark: #000;
 
     /* Body Variables*/
-    --bg_color: #e7e7e7;
+    --bg_color: #ffffff;
     --text_font: 'Roboto', sans-serif;
 
     /* Header*/
-    --header_bg_color: #444444;
+    --header_bg_color: #ffffff;
     --nav_hover_color: #ff3838;
 
     /* Section 1: Tabs*/
     --tab_selected_color: #7583D7;
     --tab_border_color: #29378C;
     --tab_unselected_color: #4D5FCB;
-    --tab_minitab_bg_color: rgba(196, 202, 238, 0.75);
+    --tab_minitab_bg_color: rgba(255, 255, 255, 0.75);
     
     /* Section 2: About Us*/
     --about_us_bg_color: #7a7a7a;
@@ -44,9 +44,9 @@ Guide to Coding website:
     --footer_bg_color: #C4CAEE;
     --footer_tab_bg_color: #7583D7;
 }
-
-
-
+section{
+    border-bottom: 5px solid #29378C;
+}
 body {
     background: var(--bg_color);
     font-family: var(--text_font);
@@ -56,12 +56,13 @@ body {
 }
 
 /* Header*/
-header {
+header {    
     background-color: var(--header_bg_color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 10%;
+    border-bottom: 5px solid #29378C;
 }
 #logo {
     cursor: pointer;
@@ -78,13 +79,16 @@ nav {
 }
 .nav_links li a {
     transition: all 0.3s ease 0s;
-    color: #fff
+    color: #130e5b
 }
 .nav_links li a:hover {
     color: var(--nav_hover_color);
 }
 
 /* Section 1*/
+#tabSection{
+    border-bottom: 5px solid #29378C;
+}
 .myTabs {
     display: flex;
     flex-wrap: wrap;
@@ -92,6 +96,7 @@ nav {
     max-height: 976px;
     margin: 50px auto;
     padding: 25px;
+    
 }
 .myTabs input[type="radio"] {
     display: none;
@@ -220,9 +225,8 @@ label[for="servicesTab"] {
 }
 #aboutUsOverlay {
     background-color: rgba(27, 37, 98, 0.5);
-    margin: 10vw;
+
     padding: 5%;
-    
     display: flex;
     flex-direction: row;
 }
@@ -254,12 +258,15 @@ label[for="servicesTab"] {
 #whyChooseUs {
     background-color: var(--why_choose_us_bg_color);
     text-align: center;
+    
+    
 }
 #whyChooseUsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px;
+    
 }
 .whyChooseUsItems {
     background-color: var(--why_choose_us_bg_item_color);
