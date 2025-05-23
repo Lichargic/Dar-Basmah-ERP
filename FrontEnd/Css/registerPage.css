@@ -1,0 +1,440 @@
+/*
+
+Guide to Coding website:
+- Naming convention: camel case for all ids and classes. EX: (helloWorld, currentLoad)
+- Naming convention: snake case for all variables in css. EX: (snake_case, water_shoot)
+- Naming convention: Pascal case for all variables in css. EX: (HelloWorld, CapitalLetter, Abcd)
+- Use Flex instead of grid!!
+- (to be continued)
+
+*/
+
+
+/* PLACE ALL YOUR VARIABLES HERE!!*/
+:root {
+    /* Global Variables*/
+    --text_color_light: #fff;
+    --text_color_dark: #000;
+
+    /* Body Variables*/
+    --bg_color: #e7e7e7;
+    --text_font: 'Roboto', sans-serif;
+
+    /* Header*/
+    --header_bg_color: #444444;
+    --nav_hover_color: #ff3838;
+
+    /* Section 1: Tabs*/
+    --tab_selected_color: #7583D7;
+    --tab_border_color: #29378C;
+    --tab_unselected_color: #4D5FCB;
+    --tab_minitab_bg_color: rgba(196, 202, 238, 0.75);
+    
+    /* Section 2: About Us*/
+    --about_us_bg_color: #7a7a7a;
+    --about_us_bg_image: url("https://media.istockphoto.com/id/1387152896/photo/female-doctor-teaching-nursing-students.jpg?s=612x612&w=0&k=20&c=88NDwtiUscz1bqG5mzPgKExmdJ7PaT9jfTj7j4ypJDU=");
+
+    /* Section 3: Meet the team*/
+
+    /* Section 4: Why choose us*/
+    --why_choose_us_bg_color: #4D5FCB;
+    --why_choose_us_bg_item_color: #8092FE;
+
+    /* Footer*/
+    --footer_bg_color: #C4CAEE;
+    --footer_tab_bg_color: #7583D7;
+}
+
+
+
+body {
+    background: var(--bg_color);
+    font-family: var(--text_font);
+    max-width: 1920px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header*/
+header {
+    background-color: var(--header_bg_color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+}
+#logo {
+    cursor: pointer;
+}
+nav {
+    order: 0;
+}
+.nav_links {
+    list-style: none;
+}
+.nav_links li {
+    display: inline;
+    padding: 0px 20px;
+}
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+    color: #fff
+}
+.nav_links li a:hover {
+    color: var(--nav_hover_color);
+}
+
+/* Section 1*/
+.myTabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding: 25px;
+    max-width: 1760px;
+    max-height: 976px;
+    margin: 50px auto;
+    padding: 25px;
+}
+.myTabs input[type="radio"] {
+    display: none;
+}
+.myTabs label {
+    padding: 13px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background: var(--tab_selected_color);
+    font-weight: bold;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    color: #fff;
+    box-sizing: border-box;
+}
+.myTabs .tab h2 {
+    max-width: 400px;
+    font-size: 51px;
+    margin-top: 50px;
+}
+.myTabs input[type='radio']:checked + label + .tab {
+    display: block;
+}
+.myTabs input[type='radio']:checked + label {
+    background: var(--tab_border_color);
+}
+
+label[for="servicesTab"] {
+    background-color: #4D5FCB;
+    color: #fff;
+}
+.tab {
+    width: 1760px;
+    height: auto;
+    max-height: 900px;
+    padding: 60px;
+    background: var(--tab_selected_color);
+    border: 4px solid #29378C;
+    order: 1;
+    overflow: hidden;
+    display: none;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.blocks_tab {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+.miniTab {
+    background: var(--tab_minitab_bg_color);
+    width: 466px;
+    height: 754px;
+    max-width: 466px;
+    max-height: 754px;
+
+    padding: 20px;
+    margin: 40px;
+    margin-top: 60px;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.miniTab img {
+    max-width: 200px;
+    max-height: 200px;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+}
+.miniTab p {
+    color: #4D4D4D;
+    max-width: 400px;
+    margin-top: -40px;
+    font-size: 17px;
+}
+.miniTab button {
+    background-color: var(--tab_minitab_bg_color);
+    border: 2px solid #29378C;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    margin-top: 40px;
+    margin-left: 25px;
+    border-radius: 16px;
+
+    align-self: flex-start;
+
+    max-width: 180;
+    max-height: 60px;
+    width: 180;
+    height: 60px;
+}
+.miniTab button img {
+    max-width: 180;
+    max-height: 60px;
+    width: 180;
+    height: 60px;
+}
+.insideTab:nth-child(1) {
+    background-color: #ff3838;
+    width: 100px;
+    height: 100px;
+}
+.insideTab:nth-child(2) {
+    background-color: #ffabab;
+    width: 100px;
+    height: 100px;
+}
+
+.registered-form .form-row {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  min-width: 300px;
+}
+
+.registered-form .form-group label {
+  font-weight: bold;
+  padding: 0px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  padding-bottom: 25px;
+}
+.registered-form .required {
+  color: red;
+}
+
+.registered-form input[type="text"],
+.registered-form input[type="password"] {
+  width: 100%;
+  height: 60px;
+  min-width: 25vw;
+  padding: 0 15px;
+    background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 15px;
+}
+
+.registered-form .form-group-button {
+  margin-top: 24px;
+}
+
+.registered-form button {
+  padding: 10px 40px;
+  height: 60px;
+  background-color: #4c60e1;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.registered-form button:hover {
+  background-color: #3a4fcf;
+}
+
+.unregistered-form .form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: space-between;
+}
+
+.unregistered-form .form-column {
+  flex: 1; /* Half width minus half of the gap */
+  min-width: 300px;
+}
+
+.unregistered-form .form-group {
+  margin-bottom: 15px;
+  
+}
+
+.unregistered-form label {
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  text-align: left;
+  padding-left: 0px;
+}
+
+.unregistered-form .required {
+  color: red;
+}
+
+.unregistered-form input[type="text"],
+.unregistered-form input[type="email"],
+.unregistered-form input[type="tel"],
+.unregistered-form input[type="number"],
+.unregistered-form input[type="date"] {
+  width: 100%;
+  height: 60px;
+  padding: 0 15px;
+    background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.unregistered-form .form-buttons {
+  margin-top: 20px;
+  display: flex;
+  height: 60px;
+  width: auto;
+  gap: 15px;
+}
+.unregistered-form .submit-btn,
+.unregistered-form .reset-btn {
+  padding: 5px 40px;
+  font-weight: bold;
+  color: white;
+  background-color: #004080;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.unregistered-form .reset-btn {
+  background-color: #0055aa;
+}
+
+.unregistered-form .submit-btn:hover {
+  background-color: #003366;
+}
+
+.unregistered-form .reset-btn:hover {
+  background-color: #003f88;
+}
+
+
+/* Section 2*/
+#aboutUs {
+    background-image: var(--about_us_bg_image);
+    background-size: cover;
+    background-position: center;
+}
+#aboutUsOverlay {
+    background-color: rgba(27, 37, 98, 0.5);
+    margin: 10vw;
+    padding: 5%;
+    
+    display: flex;
+    flex-direction: row;
+}
+
+/* Section 3*/
+#meetTheTeam h1 {
+    text-align: center;
+}
+.mTTContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mTTContainer div {
+    width: 400px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+}
+
+#doctor1, #doctor2, #doctor3 {
+    background-image: url("https://images.pexels.com/photos/8460090/pexels-photo-8460090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+/* Section 4*/
+#whyChooseUs {
+    background-color: var(--why_choose_us_bg_color);
+    text-align: center;
+}
+#whyChooseUsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+.whyChooseUsItems {
+    background-color: var(--why_choose_us_bg_item_color);
+    max-width: 520px;
+    max-height: 313px;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+}
+.whyChooseUsItems img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+/* Footer*/
+footer {
+    margin-top: 80px;
+}
+.footerContainer {
+    background-color: var(--footer_bg_color);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    padding: 50px;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footerTabs {
+    background-color: var(--footer_tab_bg_color);
+    border-radius: 25px;
+    text-align: center;
+    padding: 30px;
+    width: 440px;
+    height: 400px;
+}
+
+/* Animations */
+section {
+    opacity: 0;
+    filter: blur(5px);
+    margin: 0 90px; /* i added this her idek why */
+    transform: translateX(-20%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
