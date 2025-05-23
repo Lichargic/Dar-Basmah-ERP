@@ -283,13 +283,19 @@ label[for="servicesTab"] {
 
 /* Footer*/
 footer {
-    margin-top: 80px;
-}
-.footerContainer {
     background-color: var(--footer_bg_color);
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
+    margin-top: 80px;
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+.footerContainer {
     padding: 50px;
+    gap: 50px;
 
     display: flex;
     justify-content: space-evenly;
@@ -297,9 +303,135 @@ footer {
 
 .footerTabs {
     background-color: var(--footer_tab_bg_color);
+    color: #fff;
+
     border-radius: 25px;
     text-align: center;
     padding: 30px;
-    width: 440px;
+
     height: 400px;
+    width: 350px;
+    max-height: 400px;
+    max-width: 350px;
+}
+.footerTabs ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 200px;
+
+    padding: 0;
+    padding-top: 20px;
+    margin: 0;
+}
+.footerTabs ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+.footerTabs ul li a:visited {
+  color: inherit;
+}
+
+.footerTabs ul li a:hover {
+  color: #ffc400;
+}
+.footerContainer div h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+#footerCompany {
+    background-color: var(--footer_tab_bg_color);
+    color: #fff;
+
+    border-radius: 25px;
+    text-align: center;
+    padding: 30px;
+    
+    height: 400px;
+    width: 350px;
+    max-height: 400px;
+    max-width: 350px;
+}
+#footerCompany ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 200px;
+    align-items: flex-start;
+    text-align: justify;
+
+    padding: 0;
+    padding-top: 20px;
+    margin: 0;
+}
+#footerCompany ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#footerCompany ul li img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+#footerCompany ul li a {
+  text-decoration: none;
+  color: #fff;
+  flex: 1;
+  text-align: left;
+}
+
+#footerCompany ul li a:visited {
+  color: inherit;
+}
+
+#footerCompany ul li a:hover {
+  color: #ffc400;
+}
+
+#footerCopyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+
+    margin: 20px;
+    margin-top: 0;
+    padding: 10px;
+    border-radius: 25px;
+
+    width: 1330px;
+    max-width: 1330px;
+    max-height: 80px;
+}
+#footerCopyright img {
+    max-width: 200px;
+    max-height: 57px;
+}
+#footerCopyright div img {
+    max-width: 35px;
+    max-height: 35px;
+
+    width: 35px;
+    height: 35px;
+}
+
+
+/* Animations */
+section {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-20%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
 }
