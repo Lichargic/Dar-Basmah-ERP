@@ -69,21 +69,74 @@ header {
 }
 nav {
     order: 0;
+    
 }
 .nav_links {
-    list-style: none;
+  list-style: none;
+  padding: 10px 25px;
+  border: 3px solid #243695; /* dark blue */
+  border-radius: 15px; /* pill shape */
+  color: #243695;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: sans-serif;
+  text-align: center;
 }
+.nav_links-hover{   
+  background-color: #243695;
+  color: white;
+}
+
 .nav_links li {
-    display: inline;
-    padding: 0px 20px;
+    padding: 0px 20px; 
 }
 .nav_links li a {
     transition: all 0.3s ease 0s;
-    color: #130e5b
 }
 .nav_links li a:hover {
     color: var(--nav_hover_color);
 }
+#clump{
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  gap: 0.50rem;
+}
+
+/*Language Tab */
+.translateLanguage {
+  display: inline-flex;
+  border: 3px solid #243695;
+  border-radius: 15px;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.translateLanguage input[type="radio"] {
+  display: none;
+}
+
+.translateLanguage label {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: white;
+  color: #243695;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  border-left: 1px solid #243695;
+}
+
+.translateLanguage label:first-of-type {
+  border-left: none;
+}
+
+/* Checked state styles */
+#english:checked + label[for="english"],
+#arabic:checked + label[for="arabic"] {
+  background-color: #243695;
+  color: white;
+}
+
 
 /* Section 1*/
 #tabSection{
