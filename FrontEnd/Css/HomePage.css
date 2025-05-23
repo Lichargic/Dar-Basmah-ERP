@@ -4,8 +4,7 @@ Guide to Coding website:
 - Naming convention: camel case for all ids and classes. EX: (helloWorld, currentLoad)
 - Naming convention: snake case for all variables in css. EX: (snake_case, water_shoot)
 - Naming convention: Pascal case for all variables in css. EX: (HelloWorld, CapitalLetter, Abcd)
-- Dont spam divs! Learn when to use it properly
-- Use Flex instead of grid
+- Use Flex instead of grid!!
 - (to be continued)
 
 */
@@ -27,7 +26,9 @@ Guide to Coding website:
 
     /* Section 1: Tabs*/
     --tab_selected_color: #7583D7;
-    --tab_unselected_color: #9facff;
+    --tab_border_color: #29378C;
+    --tab_unselected_color: #4D5FCB;
+    --tab_minitab_bg_color: rgba(196, 202, 238, 0.75);
     
     /* Section 2: About Us*/
     --about_us_bg_color: #7a7a7a;
@@ -87,7 +88,8 @@ nav {
 .myTabs {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 1760px;
+    max-height: 976px;
     margin: 50px auto;
     padding: 25px;
 }
@@ -95,28 +97,87 @@ nav {
     display: none;
 }
 .myTabs label {
-    padding: 25px;
-    background: var(--tab_unselected_color);
-    font-weight: bold;
-}
-.myTabs .tab {
-    width: 1760px;
-    padding: 20px;
+    padding: 13px;
+    padding-left: 60px;
+    padding-right: 60px;
     background: var(--tab_selected_color);
-    order: 1;
-    display: none;
+    font-weight: bold;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    color: #fff;
+    box-sizing: border-box;
 }
 .myTabs .tab h2 {
-    font-size: 3em;
+    max-width: 400px;
+    font-size: 51px;
+    margin-top: 50px;
 }
 .myTabs input[type='radio']:checked + label + .tab {
     display: block;
 }
 .myTabs input[type='radio']:checked + label {
-    background: var(--tab_selected_color);
+    background: var(--tab_border_color);
+}
+
+label[for="servicesTab"] {
+    background-color: #4D5FCB;
+    color: #fff;
 }
 .tab {
+    width: 1760px;
+    height: 976px;
+    max-height: 976px;
+    padding: 20px;
+    background: var(--tab_selected_color);
+    border: 4px solid #29378C;
+    order: 1;
+    overflow: hidden;
+    display: none;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.blocks_tab {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+.miniTab {
+    background: var(--tab_minitab_bg_color);
+    width: 466px;
+    height: 754px;
+    max-width: 466px;
+    max-height: 754px;
+
+    padding: 30px;
+    margin: 40px;
+    margin-top: 60px;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.miniTab img {
+    max-width: 200px;
+    max-height: 200px;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+}
+.miniTab p {
+    max-width: 400px;
+    margin-top: -40px;
+    font-size: 17px;
+}
+.miniTab button {
+    font-size: 17px;
+    font-weight: bold;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 16px;
 }
 .insideTab:nth-child(1) {
     background-color: #ff3838;
