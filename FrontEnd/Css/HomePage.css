@@ -125,10 +125,14 @@ label[for="servicesTab"] {
 }
 .tab {
     width: 1760px;
-    height: 976px;
-    max-height: 976px;
+    height: 900px;
+    max-height: 900px;
     padding: 20px;
     background: var(--tab_selected_color);
+    background-image: url('/Resources/Frame_BG.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border: 4px solid #29378C;
     order: 1;
     overflow: hidden;
@@ -150,7 +154,7 @@ label[for="servicesTab"] {
     max-width: 466px;
     max-height: 754px;
 
-    padding: 30px;
+    padding: 20px;
     margin: 40px;
     margin-top: 60px;
     border-radius: 16px;
@@ -168,16 +172,34 @@ label[for="servicesTab"] {
     border-radius: 100px;
 }
 .miniTab p {
+    color: #4D4D4D;
     max-width: 400px;
     margin-top: -40px;
     font-size: 17px;
 }
 .miniTab button {
+    background-color: var(--tab_minitab_bg_color);
+    border: 2px solid #29378C;
+
     font-size: 17px;
     font-weight: bold;
-    padding: 20px;
+
     margin-top: 40px;
+    margin-left: 25px;
     border-radius: 16px;
+
+    align-self: flex-start;
+
+    max-width: 180;
+    max-height: 60px;
+    width: 180;
+    height: 60px;
+}
+.miniTab button img {
+    max-width: 180;
+    max-height: 60px;
+    width: 180;
+    height: 60px;
 }
 .insideTab:nth-child(1) {
     background-color: #ff3838;
