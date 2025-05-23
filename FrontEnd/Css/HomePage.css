@@ -296,3 +296,17 @@ footer {
     width: 440px;
     height: 400px;
 }
+
+/* Animations */
+section {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-20%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
