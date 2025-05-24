@@ -17,18 +17,18 @@ Guide to Coding website:
     --text_color_dark: #000;
 
     /* Body Variables*/
-    --bg_color: #e7e7e7;
+    --bg_color: #ffffff;
     --text_font: 'Roboto', sans-serif;
 
     /* Header*/
-    --header_bg_color: #444444;
-    --nav_hover_color: #ff3838;
+    --header_bg_color: #ffffff;
+    --nav_hover_color: #00ff1e;
 
     /* Section 1: Tabs*/
     --tab_selected_color: #7583D7;
     --tab_border_color: #29378C;
     --tab_unselected_color: #4D5FCB;
-    --tab_minitab_bg_color: rgba(196, 202, 238, 0.75);
+    --tab_minitab_bg_color: rgba(255, 255, 255, 0.75);
     
     /* Section 2: About Us*/
     --about_us_bg_color: #7a7a7a;
@@ -44,9 +44,6 @@ Guide to Coding website:
     --footer_bg_color: #C4CAEE;
     --footer_tab_bg_color: #7583D7;
 }
-
-
-
 body {
     background: var(--bg_color);
     font-family: var(--text_font);
@@ -56,33 +53,82 @@ body {
 }
 
 /* Header*/
-header {
+header {    
     background-color: var(--header_bg_color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 10%;
+    border-bottom: 5px solid #29378C;
 }
 #logo {
     cursor: pointer;
 }
 nav {
-    order: 0;
+    order: 0; 
 }
 .nav_links {
-    list-style: none;
+  list-style: none;
+  padding: 10px 25px;
+  border: 3px solid #29378C; /* dark blue */
+  border-radius: 15px; /* pill shape */
+  color: #29378C;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: sans-serif;
+  text-align: center;
 }
 .nav_links li {
-    display: inline;
-    padding: 0px 20px;
+    padding: 0px 20px; 
 }
 .nav_links li a {
     transition: all 0.3s ease 0s;
-    color: #fff
+    text-decoration: none;
 }
 .nav_links li a:hover {
     color: var(--nav_hover_color);
 }
+#clump{
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  gap: 0.50rem;
+}
+
+/*Language Tab */
+.translateLanguage {
+  display: inline-flex;
+  border: 3px solid #243695;
+  border-radius: 15px;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.translateLanguage input[type="radio"] {
+  display: none;
+}
+
+.translateLanguage label {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: white;
+  color: #243695;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  border-left: 1px solid #243695;
+}
+
+.translateLanguage label:first-of-type {
+  border-left: none;
+}
+
+/* Checked state styles */
+#english:checked + label[for="english"],
+#arabic:checked + label[for="arabic"] {
+  background-color: #243695;
+  color: white;
+}
+
 
 /* Section 1*/
 .myTabs {
