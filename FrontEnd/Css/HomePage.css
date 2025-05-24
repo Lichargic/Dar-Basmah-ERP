@@ -274,10 +274,15 @@ label[for="servicesTab"] {
 }
 #aboutUsOverlay {
     background-color: rgba(27, 37, 98, 0.5);
-
-    padding: 5%;
+    padding: 15%;
     display: flex;
     flex-direction: row;
+}
+.aboutusText{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 25px;
 }
 
 /* Section 3*/
