@@ -306,23 +306,35 @@ label[for="servicesTab"] {
 #whyChooseUs {
     background-color: var(--why_choose_us_bg_color);
     text-align: center;
+}
+#whyChooseUs h1 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
     
-    
+    padding-top: 40px;
+    margin: 0;
+}
+#whyChooseUsContainer div h2, p {
+    color: #D9D9D9;
 }
 #whyChooseUsContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px;
-    
 }
 .whyChooseUsItems {
     background-color: var(--why_choose_us_bg_item_color);
+
     max-width: 520px;
     max-height: 313px;
+
     text-align: center;
     margin: 20px;
     padding: 20px;
+
+    border-radius: 25px;
 }
 .whyChooseUsItems img {
     max-width: 100px;
