@@ -30,17 +30,7 @@ Guide to Coding website:
     --tab_unselected_color: #4D5FCB;
     --tab_minitab_bg_color: rgba(255, 255, 255, 0.75);
     
-    /* Section 2: About Us*/
-    --about_us_bg_color: #7a7a7a;
-    --about_us_bg_image: url("https://media.istockphoto.com/id/1387152896/photo/female-doctor-teaching-nursing-students.jpg?s=612x612&w=0&k=20&c=88NDwtiUscz1bqG5mzPgKExmdJ7PaT9jfTj7j4ypJDU=");
-
-    /* Section 3: Meet the team*/
-
-    /* Section 4: Why choose us*/
-    --why_choose_us_bg_color: #4D5FCB;
-    --why_choose_us_bg_item_color: #8092FE;
-
-    /* Footer*/
+        /* Footer*/
     --footer_bg_color: #C4CAEE;
     --footer_tab_bg_color: #7583D7;
 }
@@ -384,68 +374,6 @@ label[for="servicesTab"] {
   background-color: #003f88;
 }
 
-
-/* Section 2*/
-#aboutUs {
-    background-image: var(--about_us_bg_image);
-    background-size: cover;
-    background-position: center;
-}
-#aboutUsOverlay {
-    background-color: rgba(27, 37, 98, 0.5);
-    margin: 10vw;
-    padding: 5%;
-    
-    display: flex;
-    flex-direction: row;
-}
-
-/* Section 3*/
-#meetTheTeam h1 {
-    text-align: center;
-}
-.mTTContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.mTTContainer div {
-    width: 400px;
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    margin: 10px;
-}
-
-#doctor1, #doctor2, #doctor3 {
-    background-image: url("https://images.pexels.com/photos/8460090/pexels-photo-8460090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-}
-
-/* Section 4*/
-#whyChooseUs {
-    background-color: var(--why_choose_us_bg_color);
-    text-align: center;
-}
-#whyChooseUsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 10px;
-}
-.whyChooseUsItems {
-    background-color: var(--why_choose_us_bg_item_color);
-    max-width: 520px;
-    max-height: 313px;
-    text-align: center;
-    margin: 20px;
-    padding: 20px;
-}
-.whyChooseUsItems img {
-    max-width: 100px;
-    max-height: 100px;
-}
 
 /* Footer*/
 footer {
