@@ -32,8 +32,7 @@ Guide to Coding website:
     
     /* Section 2: About Us*/
     --about_us_bg_color: #7a7a7a;
-    --about_us_bg_image: url("https://media.istockphoto.com/id/1387152896/photo/female-doctor-teaching-nursing-students.jpg?s=612x612&w=0&k=20&c=88NDwtiUscz1bqG5mzPgKExmdJ7PaT9jfTj7j4ypJDU=");
-
+    --about_us_bg_image: url("/Resources/aboutus_img.png");
     /* Section 3: Meet the team*/
 
     /* Section 4: Why choose us*/
@@ -367,6 +366,10 @@ label[for="servicesTab"] {
     text-align: center;
     font-size: 25px;
      line-height: 1.8;
+}
+
+.aboutusText h1{
+    font-size: 50px;
 }
 
 /* Section 3*/
