@@ -337,6 +337,17 @@ label[for="servicesTab"] {
     width: 100px;
     height: 100px;
 }
+.age-range {
+    font-size: 2em; /* adjust as needed */
+    font-weight: normal; /* optional: make it less bold */
+    opacity: 0.8; /* optional: soften the appearance */
+    text-align: left;
+    margin-top: 0;
+}
+.headings h2{
+    margin-bottom: 0;
+}
+
 
 /* Section 2*/
 #aboutUs {
@@ -346,10 +357,15 @@ label[for="servicesTab"] {
 }
 #aboutUsOverlay {
     background-color: rgba(27, 37, 98, 0.5);
-
-    padding: 5%;
+    padding: 15%;
     display: flex;
     flex-direction: row;
+}
+.aboutusText{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 25px;
 }
 
 /* Section 3*/
