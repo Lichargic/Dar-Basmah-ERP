@@ -370,7 +370,9 @@ label[for="servicesTab"] {
 
 /* Section 3*/
 #meetTheTeam h1 {
+    padding-top: 50px;
     text-align: center;
+    font-size: 35px;
 }
 .mTTContainer {
     display: flex;
@@ -378,17 +380,107 @@ label[for="servicesTab"] {
     justify-content: center;
     align-items: center;
 }
-
+.mTTContainer div div h4 {
+    color: #4D4D4D;
+}
 .mTTContainer div {
-    width: 400px;
-    height: 500px;
+    max-width: 533px;
+    max-height: 716px;
+    width: 533px;
+    height: 716px;
+
+    border-radius: 25px;
+
     background-size: cover;
     background-position: center;
-    margin: 10px;
-}
 
-#doctor1, #doctor2, #doctor3 {
-    background-image: url("https://images.pexels.com/photos/8460090/pexels-photo-8460090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    margin: 10px;
+
+    background-color: #B0B8E8;
+}
+#doctor1 {
+    background-image: url("/Resources/MeetTheTeam/person1.png");
+    display: flex;
+    align-items: end;
+}
+#doctor1 div {
+    background-color: rgba(255, 255, 255, 0.8);
+
+    max-width: 373px;
+    max-height: 80px;
+    width: 373px;
+    height: 80px;
+
+    margin: 50px;
+    margin-left: 80px;
+    
+    border: 2px solid #7583D7;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding-top: 30px;
+}
+#doctor1 div h2, h4 {
+    padding: 0;
+    margin: 0;
+}
+#doctor2 {
+    background-image: url("/Resources/MeetTheTeam/person2.png");
+        display: flex;
+    align-items: end;
+}
+#doctor2 div {
+    background-color: rgba(255, 255, 255, 0.8);
+
+    max-width: 373px;
+    max-height: 80px;
+    width: 373px;
+    height: 80px;
+
+    margin: 50px;
+    margin-left: 80px;
+    
+    border: 2px solid #7583D7;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding-top: 30px;
+}
+#doctor2 div h2, h4 {
+    padding: 0;
+    margin: 0;
+}
+#doctor3 {
+    background-image: url("/Resources/MeetTheTeam/person3.png");
+    display: flex;
+    align-items: end;
+}
+#doctor3 div {
+    background-color: rgba(255, 255, 255, 0.8);
+
+    max-width: 373px;
+    max-height: 80px;
+    width: 373px;
+    height: 80px;
+
+    margin: 50px;
+    margin-left: 80px;
+    
+    border: 2px solid #7583D7;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding-top: 30px;
+}
+#doctor3 div h2, h4 {
+    padding: 0;
+    margin: 0;
 }
 
 /* Section 4*/
