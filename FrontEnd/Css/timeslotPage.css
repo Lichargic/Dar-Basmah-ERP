@@ -114,9 +114,12 @@ h1 {
 #timeslots {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* Always 4 columns */
+  grid-template-rows: repeat(4, auto);   /* Always 4 rows */
   gap: 10px;
+  justify-items: stretch;
 }
+
 
 .timeslot {
   padding: 12px;
@@ -127,7 +130,12 @@ h1 {
   text-align: center;
   transition: background 0.2s ease;
   font-size: clamp(0.8rem, 2vw, 1rem);
+  height: 60px; /* optional, makes each slot the same height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .timeslot:hover {
   background-color: #2980b9;
@@ -165,4 +173,11 @@ h1 {
   background-color: #f1f2f6;
   color: #999;
   cursor: not-allowed;
+}
+
+.calendar-header button:disabled {
+  background-color: #bdc3c7; /* Soft gray background */
+  color: #ecf0f1;             /* Lighter text */
+  cursor: not-allowed;
+  opacity: 0.7;
 }
