@@ -18,7 +18,7 @@ Guide to Coding website:
 
     /* Body Variables*/
     --bg_color: #ffffff;
-    --text_font: 'Roboto', sans-serif;
+    --text_font: "Roboto", sans-serif;
 
     /* Header*/
     --header_bg_color: #ffffff;
@@ -152,10 +152,10 @@ nav {
     font-size: 51px;
     margin-top: 50px;
 }
-.myTabs input[type='radio']:checked + label + .tab {
+.myTabs input[type="radio"]:checked + label + .tab {
     display: block;
 }
-.myTabs input[type='radio']:checked + label {
+.myTabs input[type="radio"]:checked + label {
     background: var(--tab_border_color);
 }
 

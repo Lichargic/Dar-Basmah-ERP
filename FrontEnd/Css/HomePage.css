@@ -32,7 +32,7 @@ Guide to Coding website:
     
     /* Section 2: About Us*/
     --about_us_bg_color: #7a7a7a;
-    --about_us_bg_image: url("/images/aboutus_img.png");
+    --about_us_bg_image: url("/frontend/images/aboutus_img.png");
     /* Section 3: Meet the team*/
 
     /* Section 4: Why choose us*/
@@ -182,7 +182,7 @@ label[for="servicesTab"] {
     max-height: 900px;
     padding: 20px;
     background: var(--tab_selected_color);
-    background-image: url('/images/Frame_BG.png');
+    background-image: url("/frontend/images/Frame_BG.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -407,7 +407,7 @@ label[for="servicesTab"] {
     background-color: #B0B8E8;
 }
 #doctor1 {
-    background-image: url("/images/MeetTheTeam/person1.png");
+    background-image: url("/frontend/images/MeetTheTeam/person1.png");
     display: flex;
     align-items: end;
 }
@@ -435,7 +435,7 @@ label[for="servicesTab"] {
     margin: 0;
 }
 #doctor2 {
-    background-image: url("/images/MeetTheTeam/person2.png");
+    background-image: url("/frontend/images/MeetTheTeam/person2.png");
         display: flex;
     align-items: end;
 }
@@ -463,7 +463,7 @@ label[for="servicesTab"] {
     margin: 0;
 }
 #doctor3 {
-    background-image: url("/images/MeetTheTeam/person3.png");
+    background-image: url("/frontend/images/MeetTheTeam/person3.png");
     display: flex;
     align-items: end;
 }
