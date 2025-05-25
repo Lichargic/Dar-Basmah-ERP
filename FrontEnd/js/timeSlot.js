@@ -8,11 +8,10 @@ const nextBtn = document.getElementById("nextMonth");
 
 const slotTimes = [
   "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM",
-  "11:00 AM", "11:30 AM", "01:00 PM", "01:30 PM",
-  "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM",
-  "04:00 PM", "04:30 PM"
+  "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", 
+  "01:00 PM", "01:30 PM", "02:00 PM", "02:30 PM", 
+  "03:00 PM", "03:30 PM", "04:00 PM", "04:30 PM"
 ];
-
 
 const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -22,7 +21,8 @@ function generateCalendar(year, month) {
   calendar.innerHTML = "";
 
   // Show month/year
-  const monthName = currentDate.toLocaleString("default", { month: "long" });
+  const displayDate = new Date(year, month);
+  const monthName = displayDate.toLocaleString("default", { month: "long" });
   monthYearLabel.textContent = `${monthName} ${year}`;
 
   // Add day headers
@@ -53,19 +53,28 @@ function generateCalendar(year, month) {
     const today = new Date();
     today.setHours(0, 0, 0, 0); // ignore time for comparison
 
+    const dayOfWeek = cellDate.getDay(); // 0 = Sunday, 6 = Saturday
+
     if (cellDate < today) {
-        dayCell.classList.add("past-day");
-        dayCell.style.pointerEvents = "none"; // make unclickable
-        dayCell.style.opacity = "0.5";
+      dayCell.classList.add("past-day");
+      dayCell.style.pointerEvents = "none";
+      dayCell.style.opacity = "0.5";
+    } else if (dayOfWeek === 0 || dayOfWeek === 6) {
+      // Weekend - disable
+      dayCell.classList.add("weekend");
+      dayCell.style.pointerEvents = "none";
+      dayCell.style.opacity = "0.5";
     } else {
-        dayCell.addEventListener("click", () => {
+      // Weekday - allow slot selection
+      dayCell.addEventListener("click", () => {
         openTimeSlotModal(day, month + 1, year);
-        });
+      });
     }
 
     calendar.appendChild(dayCell);
-    }
+  }
 
+  updateNavButtons();
 }
 
 function openTimeSlotModal(day, month, year) {
@@ -77,7 +86,6 @@ function openTimeSlotModal(day, month, year) {
     slot.className = "timeslot";
     slot.textContent = time;
 
-    // Redirect on click
     slot.addEventListener("click", () => {
       window.location.href = "registerPage.html";
     });
@@ -85,7 +93,6 @@ function openTimeSlotModal(day, month, year) {
     timeslots.appendChild(slot);
   });
 }
-
 
 closeModal.onclick = () => {
   timeslotModal.style.display = "none";
@@ -98,14 +105,61 @@ window.onclick = event => {
 };
 
 prevBtn.onclick = () => {
-  currentDate.setMonth(currentDate.getMonth() - 1);
-  generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+
+  if (
+    currentDate.getFullYear() > currentYear ||
+    (currentDate.getFullYear() === currentYear && currentDate.getMonth() > currentMonth)
+  ) {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+  }
 };
 
 nextBtn.onclick = () => {
-  currentDate.setMonth(currentDate.getMonth() + 1);
-  generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+
+  const nextMonthDate = new Date(currentYear, currentMonth + 1);
+
+  if (
+    currentDate.getFullYear() < nextMonthDate.getFullYear() ||
+    (currentDate.getFullYear() === nextMonthDate.getFullYear() &&
+     currentDate.getMonth() < nextMonthDate.getMonth())
+  ) {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+  }
 };
+
+function updateNavButtons() {
+  const today = new Date();
+  const currentMonth = today.getMonth();
+  const currentYear = today.getFullYear();
+
+  const nextMonthDate = new Date(currentYear, currentMonth + 1);
+
+  if (
+    currentDate.getFullYear() === currentYear &&
+    currentDate.getMonth() === currentMonth
+  ) {
+    prevBtn.disabled = true;
+  } else {
+    prevBtn.disabled = false;
+  }
+
+  if (
+    currentDate.getFullYear() === nextMonthDate.getFullYear() &&
+    currentDate.getMonth() === nextMonthDate.getMonth()
+  ) {
+    nextBtn.disabled = true;
+  } else {
+    nextBtn.disabled = false;
+  }
+}
 
 // Initial render
 generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
