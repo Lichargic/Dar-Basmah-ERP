@@ -1,3 +1,4 @@
 {
-  "public": "FrontEnd"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "FrontEnd"
 }
