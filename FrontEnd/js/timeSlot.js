@@ -53,11 +53,19 @@ function generateCalendar(year, month) {
     const today = new Date();
     today.setHours(0, 0, 0, 0); // ignore time for comparison
 
+    const dayOfWeek = cellDate.getDay(); // 0 = Sunday, 6 = Saturday
+
     if (cellDate < today) {
       dayCell.classList.add("past-day");
-      dayCell.style.pointerEvents = "none"; // make unclickable
+      dayCell.style.pointerEvents = "none";
+      dayCell.style.opacity = "0.5";
+    } else if (dayOfWeek === 0 || dayOfWeek === 6) {
+      // Weekend - disable
+      dayCell.classList.add("weekend");
+      dayCell.style.pointerEvents = "none";
       dayCell.style.opacity = "0.5";
     } else {
+      // Weekday - allow slot selection
       dayCell.addEventListener("click", () => {
         openTimeSlotModal(day, month + 1, year);
       });
@@ -66,7 +74,7 @@ function generateCalendar(year, month) {
     calendar.appendChild(dayCell);
   }
 
-  updateNavButtons(); // Update button states
+  updateNavButtons();
 }
 
 function openTimeSlotModal(day, month, year) {
@@ -78,7 +86,6 @@ function openTimeSlotModal(day, month, year) {
     slot.className = "timeslot";
     slot.textContent = time;
 
-    // Redirect on click
     slot.addEventListener("click", () => {
       window.location.href = "registerPage.html";
     });
@@ -102,7 +109,6 @@ prevBtn.onclick = () => {
   const currentYear = today.getFullYear();
   const currentMonth = today.getMonth();
 
-  // Prevent navigating to months before current
   if (
     currentDate.getFullYear() > currentYear ||
     (currentDate.getFullYear() === currentYear && currentDate.getMonth() > currentMonth)
@@ -117,9 +123,8 @@ nextBtn.onclick = () => {
   const currentYear = today.getFullYear();
   const currentMonth = today.getMonth();
 
-  const nextMonthDate = new Date(currentYear, currentMonth + 1); // 1 month ahead
+  const nextMonthDate = new Date(currentYear, currentMonth + 1);
 
-  // Prevent navigating past next month
   if (
     currentDate.getFullYear() < nextMonthDate.getFullYear() ||
     (currentDate.getFullYear() === nextMonthDate.getFullYear() &&
@@ -137,7 +142,6 @@ function updateNavButtons() {
 
   const nextMonthDate = new Date(currentYear, currentMonth + 1);
 
-  // Disable Prev if we're at current month
   if (
     currentDate.getFullYear() === currentYear &&
     currentDate.getMonth() === currentMonth
@@ -147,7 +151,6 @@ function updateNavButtons() {
     prevBtn.disabled = false;
   }
 
-  // Disable Next if we're at next month
   if (
     currentDate.getFullYear() === nextMonthDate.getFullYear() &&
     currentDate.getMonth() === nextMonthDate.getMonth()
